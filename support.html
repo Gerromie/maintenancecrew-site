@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support &mdash; Maintenance Crew</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html">&larr; Maintenance Crew</a>
+    </header>
+
+    <h1>Support</h1>
+    <p class="meta">Maintenance Crew for iOS and macOS</p>
+
+    <h2>Get help</h2>
+    <p>Email <a href="mailto:privacy@maintenancecrew.app">privacy@maintenancecrew.app</a> with your question or feedback. Include the app version (Settings &rarr; About) and, if relevant, a brief description of what you were doing when the issue occurred.</p>
+
+    <hr>
+
+    <h2>Common questions</h2>
+
+    <h2>How do I load the sample data?</h2>
+    <p>Go to <strong>Settings &rarr; Load Sample Data</strong>. This populates the app with a demo vessel, schedules, and parts so you can explore features before adding your own boat. You can clear sample data by deleting the demo vessel from the vessel list.</p>
+
+    <h2>I deleted the app and lost my data. Can I recover it?</h2>
+    <p>All data is stored locally on your device. If you had iCloud Backup enabled, your data may be present in an iCloud Backup that was made before the deletion. Restore from a backup using your device's standard iCloud restore process. Maintenance Crew does not operate any server-side backup; we cannot recover data on your behalf.</p>
+
+    <h2>Where do I find my Claude API key?</h2>
+    <p>The PDF manual parsing feature requires an API key from Anthropic. Sign in to <a href="https://console.anthropic.com" rel="noopener">console.anthropic.com</a>, go to <strong>API Keys</strong>, and create a new key. Paste it into <strong>Settings &rarr; Claude API Key</strong> in the app.</p>
+    <p>Your key is stored on your device and is sent only to Anthropic's servers when you initiate a parse. See the <a href="privacy.html">Privacy Policy</a> for details. Anthropic may charge for API usage depending on your plan.</p>
+
+    <h2>The app says it can't get my location.</h2>
+    <p>Location access is used only for Ship's Log entries. If location is unavailable:</p>
+    <ul>
+      <li><strong>iOS</strong>: Go to <strong>Settings &rarr; Privacy &amp; Security &rarr; Location Services</strong>, find Maintenance Crew, and set it to <em>While Using the App</em>.</li>
+      <li><strong>macOS</strong>: Go to <strong>System Settings &rarr; Privacy &amp; Security &rarr; Location Services</strong> and enable Maintenance Crew. Also make sure Location Services is turned on at the top of that screen.</li>
+    </ul>
+    <p>On macOS, location is derived from Wi-Fi network position and may be less precise than GPS. If you're in an area with limited Wi-Fi networks, the app may not be able to determine your location.</p>
+
+    <h2>PDF import fails or produces incomplete results.</h2>
+    <p>PDF parsing uses Anthropic's Claude AI. A few things to check:</p>
+    <ul>
+      <li>Confirm your API key is entered correctly in Settings.</li>
+      <li>Check that your Anthropic account has available credits or an active API plan at <a href="https://console.anthropic.com" rel="noopener">console.anthropic.com</a>.</li>
+      <li>Very large PDFs (&gt;200 pages) may hit API limits; try importing one chapter or section at a time.</li>
+      <li>Scanned PDFs (image-only, no text layer) are not supported — the parser requires selectable text.</li>
+    </ul>
+    <p>If parsing succeeds but specific tasks are missing, you can add them manually from the maintenance schedule screen.</p>
+
+    <h2>How do I join the beta?</h2>
+    <p>Maintenance Crew is currently in TestFlight beta. Request an invitation by emailing <a href="mailto:privacy@maintenancecrew.app">privacy@maintenancecrew.app</a>.</p>
+
+    <footer>
+      <p><a href="index.html">Maintenance Crew</a> &mdash; <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+  </div>
+</body>
+</html>
