@@ -13,14 +13,19 @@
     </header>
 
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: April 2025</p>
+    <p class="meta">Last updated: May 2026</p>
 
-    <p>Maintenance Crew is designed around a simple principle: your boat's data belongs to you. The app stores everything on your device and does not operate any servers of its own. This policy describes precisely what data the app uses and what leaves your device.</p>
+    <p>Maintenance Crew is designed around a simple principle: your boat's data belongs to you. This policy describes precisely what data the app uses and what leaves your device.</p>
 
     <h2>What data the app stores</h2>
-    <p>All app data &mdash; maintenance schedules, service logs, parts inventory, vessel information, and PDF bookmarks &mdash; is stored in a local SQLite database on your device. The database is located inside the app's sandboxed Application Support directory and is never transmitted to any server operated by Maintenance Crew.</p>
+    <p>All app data &mdash; maintenance schedules, service logs, parts inventory, vessel information, and PDF bookmarks &mdash; is stored in a local SQLite database on your device inside the app's sandboxed Application Support directory. This data is never transmitted to any server operated by Maintenance Crew.</p>
 
     <p><strong>iCloud Backup.</strong> If you have iCloud Backup enabled on your device, Apple may include the app's data directory in your encrypted iCloud Backup as part of standard iOS and macOS backup behavior. This backup is controlled entirely by Apple and your own iCloud settings; Maintenance Crew does not initiate or control it. See <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a> for details on how Apple handles backup data.</p>
+
+    <h2>Optional iCloud sync</h2>
+    <p>Maintenance Crew includes an optional iCloud sync feature. When enabled, the app stores a copy of your data in your personal iCloud private database using Apple's CloudKit infrastructure (container <code>iCloud.app.maintenancecrew</code>). Your data in iCloud is stored in your own Apple account and is accessible only to you &mdash; Maintenance Crew does not have access to your iCloud database.</p>
+
+    <p>iCloud sync is governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>. You can disable it at any time in Settings &rarr; iCloud.</p>
 
     <h2>Location data</h2>
     <p>Maintenance Crew requests access to your device's location only when you use the Ship's Log feature to record where a log entry was made. Location access requires your explicit permission; the app requests <em>When In Use</em> authorization only.</p>
@@ -29,27 +34,31 @@
 
     <p><strong>Reverse geocoding (place names).</strong> When the app resolves a human-readable place name from your coordinates &mdash; for example, "Anacortes, WA" &mdash; it uses Apple's MapKit reverse-geocoding service (<code>MKReverseGeocodingRequest</code>). This sends your coordinates to Apple's servers to look up the place name. This network call is governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>. If you do not want your coordinates sent to Apple for this purpose, you can decline location access when the app requests it.</p>
 
-    <h2>PDF manuals and the Claude AI feature</h2>
-    <p>Maintenance Crew includes an optional feature that uses Anthropic's Claude AI to parse maintenance schedules and part numbers out of PDF engine manuals. <strong>This feature is entirely opt-in and requires you to supply your own Claude API key from <a href="https://console.anthropic.com" rel="noopener">Anthropic's Console</a>.</strong></p>
+    <h2>AI Assistant for PDF manuals</h2>
+    <p>Maintenance Crew includes an optional AI Assistant feature that helps parse maintenance schedules and part numbers from PDF engine manuals. <strong>The app does not send your PDF content to any server.</strong> Instead, the app generates a structured prompt that you copy and paste into any AI chat tool you already use. You paste the response back into the app to import the results. No data is transmitted by Maintenance Crew in this process.</p>
 
-    <p><strong>Your API key.</strong> Your Claude API key is stored on your device using Apple's standard app-storage mechanism (UserDefaults). It is not stored in Apple's Keychain and is not transmitted anywhere except to Anthropic's API during parsing, as described below.</p>
+    <p>PDF files are stored at the location you choose on your device, using a security-scoped bookmark. The app also stores a SHA-256 hash of the file in its local database for change detection. Neither the file nor its hash is transmitted by Maintenance Crew.</p>
 
-    <p><strong>PDF content.</strong> When you initiate a manual parse, the app sends the content of your selected PDF and your API key to Anthropic's API endpoint (<code>https://api.anthropic.com/v1/messages</code>). This transmission is made directly from your device to Anthropic's servers over HTTPS. No Maintenance Crew server is involved. Anthropic's handling of data sent to their API is governed by <a href="https://www.anthropic.com/legal/privacy" rel="noopener">Anthropic's Privacy Policy</a>.</p>
+    <h2>App configuration</h2>
+    <p>The app fetches a small configuration file from <code>maintenancecrew.app/api/v1/models.json</code> on launch to keep the AI Assistant prompt current. This request contains no personal data or user identifiers. The configuration is cached on your device for up to 24 hours, and a built-in fallback is used if the request fails.</p>
 
-    <p>PDF files themselves are stored at the location you choose on your device, using a security-scoped bookmark. The app also stores a SHA-256 hash of the file in its local database for change detection. Neither the file nor its hash is transmitted by Maintenance Crew.</p>
+    <h2>Subscription</h2>
+    <p>Maintenance Crew is a paid annual subscription managed through Apple's App Store. Payment is processed entirely by Apple. Maintenance Crew does not receive or store your payment information. Your subscription status is verified on-device using Apple's StoreKit framework; no purchase data is transmitted to any server operated by Maintenance Crew.</p>
 
-    <p>If you never supply a Claude API key, no PDF content is ever transmitted anywhere.</p>
+    <p>The app uses Apple's system Keychain to store a tamper-resistant timestamp used to implement a fair offline grace window for subscribers who are temporarily without internet access.</p>
+
+    <p>Subscription purchases are governed by <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Apple's Standard End User License Agreement</a> and <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>.</p>
 
     <h2>No analytics or advertising</h2>
     <p>Maintenance Crew does not include any analytics SDKs, crash-reporting services, advertising SDKs, or behavioral tracking. The app's privacy manifest (<code>PrivacyInfo.xcprivacy</code>) declares <code>NSPrivacyTracking: false</code> and no tracking domains.</p>
 
-    <p>The only third-party network destination the app contacts is <code>api.anthropic.com</code>, and only when you initiate a PDF parse with your own API key.</p>
-
     <h2>Summary of data flows</h2>
     <ul>
       <li><strong>Apple iCloud Backup</strong> &mdash; your device data may be included in Apple's encrypted iCloud Backup if you have that feature enabled. Governed by Apple's Privacy Policy.</li>
+      <li><strong>Apple iCloud Sync (optional)</strong> &mdash; your app data is stored in your own iCloud private database when you enable the optional sync feature. Governed by Apple's Privacy Policy.</li>
       <li><strong>Apple MapKit reverse geocoding</strong> &mdash; GPS coordinates are sent to Apple's servers to resolve place names, only when you record a Ship's Log entry with location enabled. Governed by Apple's Privacy Policy.</li>
-      <li><strong>Anthropic Claude API</strong> &mdash; PDF content and your API key are sent to Anthropic when you initiate a manual parse. Opt-in; requires your own key. Governed by Anthropic's Privacy Policy.</li>
+      <li><strong>App configuration</strong> &mdash; a configuration file is fetched from <code>maintenancecrew.app/api/v1/models.json</code> on launch. No personal data is transmitted.</li>
+      <li><strong>Apple StoreKit / App Store</strong> &mdash; subscription and payment processing handled by Apple. No purchase data is transmitted to Maintenance Crew.</li>
     </ul>
     <p>No other data leaves your device.</p>
 
@@ -58,6 +67,7 @@
 
     <footer>
       <p><a href="index.html">Maintenance Crew</a> &mdash; <a href="support.html">Support</a></p>
+      <p>&copy; 2026 Maintenance Crew</p>
     </footer>
   </div>
 </body>

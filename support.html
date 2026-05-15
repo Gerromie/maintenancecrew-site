@@ -26,32 +26,52 @@
     <p>Go to <strong>Settings &rarr; Load Sample Data</strong>. This populates the app with a demo vessel, schedules, and parts so you can explore features before adding your own boat. You can clear sample data by deleting the demo vessel from the vessel list.</p>
 
     <h2>I deleted the app and lost my data. Can I recover it?</h2>
-    <p>All data is stored locally on your device. If you had iCloud Backup enabled, your data may be present in an iCloud Backup that was made before the deletion. Restore from a backup using your device's standard iCloud restore process. Maintenance Crew does not operate any server-side backup; we cannot recover data on your behalf.</p>
+    <p>If you had iCloud sync enabled, your data is stored in your iCloud account. Re-install the app and sign in with the same Apple ID to restore it.</p>
+    <p>If iCloud sync was not enabled, all data was stored locally on your device. If you had iCloud Backup enabled, your data may be present in a backup made before the deletion &mdash; restore from that backup using your device&rsquo;s standard iCloud restore process. Maintenance Crew does not operate any server-side backup and cannot recover data on your behalf.</p>
 
-    <h2>Where do I find my Claude API key?</h2>
-    <p>The PDF manual parsing feature requires an API key from Anthropic. Sign in to Claude, go to <strong>API Keys</strong>, and create a new key. Paste it into <strong>Settings &rarr; Claude API Key</strong> in the app.</p>
-    <p>Your key is stored on your device and is sent only to Anthropic's servers when you initiate a parse. See the <a href="privacy.html">Privacy Policy</a> for details. Anthropic may charge for API usage depending on your plan.</p>
+    <h2>How does the AI Assistant for PDF parsing work?</h2>
+    <p>The AI Assistant feature helps you extract maintenance schedules and part numbers from PDF engine manuals. The app generates a structured prompt based on your PDF. You copy that prompt and paste it into any AI chat tool you already use, then paste the response back into the app to import the results.</p>
+    <p>If the import produces incomplete results, try these steps:</p>
+    <ul>
+      <li>Make sure your PDF has selectable text &mdash; scanned image-only PDFs are not supported.</li>
+      <li>For very large manuals, try importing one chapter or section at a time using the re-parse option.</li>
+      <li>Review the pasted response for formatting issues before importing; some AI tools add extra text outside the structured response.</li>
+    </ul>
+    <p>If specific tasks are missing after a successful import, you can add them manually from the maintenance schedule screen.</p>
 
-    <h2>The app says it can't get my location.</h2>
-    <p>Location access is used only for Ship's Log entries. If location is unavailable:</p>
+    <h2>The app says it can&rsquo;t get my location.</h2>
+    <p>Location access is used only for Ship&rsquo;s Log entries. If location is unavailable:</p>
     <ul>
       <li><strong>iOS</strong>: Go to <strong>Settings &rarr; Privacy &amp; Security &rarr; Location Services</strong>, find Maintenance Crew, and set it to <em>While Using the App</em>.</li>
       <li><strong>macOS</strong>: Go to <strong>System Settings &rarr; Privacy &amp; Security &rarr; Location Services</strong> and enable Maintenance Crew. Also make sure Location Services is turned on at the top of that screen.</li>
     </ul>
-    <p>On macOS, location is derived from Wi-Fi network position and may be less precise than GPS. If you're in an area with limited Wi-Fi networks, the app may not be able to determine your location.</p>
+    <p>On macOS, location is derived from Wi-Fi network position and may be less precise than GPS. If you&rsquo;re in an area with limited Wi-Fi networks, the app may not be able to determine your location.</p>
 
-    <h2>PDF import fails or produces incomplete results.</h2>
-    <p>PDF parsing uses Anthropic's Claude AI. A few things to check:</p>
+    <h2>Subscription</h2>
+
+    <h3>How do I subscribe?</h3>
+    <p>Open the app and follow the subscription prompt, or go to <strong>Settings &rarr; Subscription</strong>. Maintenance Crew is an annual subscription available through the App Store. An introductory price is available on your first subscription.</p>
+
+    <h3>How do I manage or cancel my subscription?</h3>
+    <p>Go to <strong>Settings &rarr; Subscription &rarr; Manage Subscription</strong>, or open your device&rsquo;s App Store subscription settings directly:</p>
     <ul>
-      <li>Confirm your API key is entered correctly in Settings.</li>
-      <li>Check that your Anthropic account has available credits or an active API plan at Anthropic.</li>
-      <li>Very large PDFs (&gt;200 pages) may hit API limits; try importing one chapter or section at a time.</li>
-      <li>Scanned PDFs (image-only, no text layer) are not supported — the parser requires selectable text.</li>
+      <li><strong>iOS</strong>: Settings &rarr; [your name] &rarr; Subscriptions</li>
+      <li><strong>macOS</strong>: App Store &rarr; [your name] &rarr; Manage Subscriptions</li>
     </ul>
-    <p>If parsing succeeds but specific tasks are missing, you can add them manually from the maintenance schedule screen.</p>
 
-    <h2>How do I join the beta?</h2>
-    <p>Maintenance Crew is currently in TestFlight beta. Request an invitation by emailing <a href="mailto:privacy@maintenancecrew.app">privacy@maintenancecrew.app</a>.</p>
+    <h3>How do I restore a purchase on a new device?</h3>
+    <p>Sign in to the App Store with the same Apple ID you used to subscribe, then go to <strong>Settings &rarr; Subscription &rarr; Restore Purchases</strong>. Your subscription will be restored automatically.</p>
+
+    <h3>Does Family Sharing work?</h3>
+    <p>Yes. If Family Sharing is enabled on your Apple ID, other members of your Family Sharing group can use Maintenance Crew under your subscription at no additional cost.</p>
+
+    <h3>What happens if my subscription lapses?</h3>
+    <p>If your subscription expires, the app enters a grace period before restricting new-data entry. You can still view all existing data. To restore full access, resubscribe from <strong>Settings &rarr; Subscription</strong>. If you were recently offline (for example, on an extended passage), the app allows extra time before engaging any restriction.</p>
+
+    <h2>iCloud sync</h2>
+    <p>To enable iCloud sync, go to <strong>Settings &rarr; iCloud</strong> and turn on sync. Your data will be merged with any existing iCloud data on your account.</p>
+    <p>If you use Maintenance Crew on multiple devices, changes may take a few minutes to appear after syncing. If a change doesn&rsquo;t appear, pull to refresh or relaunch the app.</p>
+    <p>iCloud sync requires an active internet connection and sufficient iCloud storage. If your iCloud storage is full, sync will pause until space is freed. Check your iCloud storage in your device&rsquo;s Settings app.</p>
 
     <footer>
       <p><a href="index.html">Maintenance Crew</a> &mdash; <a href="privacy.html">Privacy Policy</a></p>
