@@ -407,6 +407,71 @@ body.landing {
   stroke-linejoin: round;
 }
 
+/* Feature clusters */
+.landing .feature-cluster {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing .feature-cluster .section-heading {
+  margin-bottom: 0.75rem;
+}
+
+.landing .feature-cluster .feature-card {
+  margin-bottom: 1.25rem;
+}
+
+.landing .feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.landing .feature-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.landing .feature-list-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-tint);
+  color: var(--accent);
+  border-radius: 7px;
+  margin-top: 0.1rem;
+}
+
+.landing .feature-list-icon svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.landing .feature-list-item span:last-child {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.landing .feature-list-item strong {
+  color: var(--text);
+}
+
 /* Large-screen showcase */
 .landing .showcase {
   margin: 1rem 0 4rem;
