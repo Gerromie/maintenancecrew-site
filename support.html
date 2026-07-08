@@ -28,9 +28,11 @@
     <h2>I deleted the app and lost my data. Can I recover it?</h2>
     <p>If you had iCloud sync enabled, your data is stored in your iCloud account. Re-install the app and sign in with the same Apple ID to restore it.</p>
     <p>If iCloud sync was not enabled, all data was stored locally on your device. If you had iCloud Backup enabled, your data may be present in a backup made before the deletion &mdash; restore from that backup using your device&rsquo;s standard iCloud restore process. Maintenance Crew does not operate any server-side backup and cannot recover data on your behalf.</p>
+    <p>If a boat was <strong>shared</strong> with you by a co-skipper, your copy of that boat lives on your own device and in your own iCloud. Even if the owner later loses their device and account, your copy of everything you logged remains &mdash; re-install and sign in with the same Apple ID to restore it.</p>
 
     <h2>How does the AI Assistant for PDF parsing work?</h2>
-    <p>The AI Assistant feature helps you extract maintenance schedules and part numbers from PDF engine manuals. The app generates a structured prompt based on your PDF. You copy that prompt and paste it into any AI chat tool you already use, then paste the response back into the app to import the results.</p>
+    <p>The AI Assistant feature helps you extract maintenance schedules and part numbers from PDF engine manuals. The app generates a structured prompt based on your PDF. You copy that prompt and paste it into any AI chat tool you already use, then paste the response back into the app to import the results. Used this way, the app itself never contacts an AI service &mdash; and you don&rsquo;t need any AI account or key.</p>
+    <p>If you prefer, you can add your own AI provider API key under <strong>Settings &rarr; API Key</strong>. With a key configured, the app parses a PDF automatically by sending it to the AI provider with your key, skipping the copy-paste. Your key is stored only in your device&rsquo;s Keychain, and only you are billed for its use. Either way, you review every proposed schedule before anything is saved.</p>
     <p>If the import produces incomplete results, try these steps:</p>
     <ul>
       <li>Make sure your PDF has selectable text &mdash; scanned image-only PDFs are not supported.</li>
@@ -72,6 +74,23 @@
     <p>To enable iCloud sync, go to <strong>Settings &rarr; iCloud</strong> and turn on sync. Your data will be merged with any existing iCloud data on your account.</p>
     <p>If you use Maintenance Crew on multiple devices, changes may take a few minutes to appear after syncing. If a change doesn&rsquo;t appear, pull to refresh or relaunch the app.</p>
     <p>iCloud sync requires an active internet connection and sufficient iCloud storage. If your iCloud storage is full, sync will pause until space is freed. Check your iCloud storage in your device&rsquo;s Settings app.</p>
+
+    <h2>Sharing a boat with a co-skipper</h2>
+
+    <h3>How do I share a boat?</h3>
+    <p>Open the boat&rsquo;s detail screen and tap <strong>Share boat</strong>. On iPhone and iPad, the standard iCloud sharing panel lets you send an invitation by Messages, Mail, and so on. On Mac, enter the person&rsquo;s Apple ID (the iCloud email or phone they use) and send them the link. Sharing is private and invite-only &mdash; there is no public link &mdash; and it&rsquo;s per-boat, so inviting a co-skipper to one boat never affects your others.</p>
+
+    <h3>What can a co-skipper see and do?</h3>
+    <p>Once they accept, a co-skipper gets their own synced copy of that one boat &mdash; its systems, parts, schedules, logs, photos, and manuals &mdash; and can view and edit it. Changes flow both ways, and each log entry shows who did the work. Only the owner can add or remove people. Anything attached to the boat travels with it, including photos and any registration or insurance document images, so treat those images as shared rather than private.</p>
+
+    <h3>Does a co-skipper need their own subscription?</h3>
+    <p>Not if they&rsquo;re in your Apple Family Sharing group &mdash; they&rsquo;re covered by your subscription. Otherwise, their own subscription covers their ability to make changes. Sharing itself is never a paid add-on.</p>
+
+    <h3>What happens if I remove a co-skipper?</h3>
+    <p>They lose access to the boat, but their copy stays on their device as a read-only snapshot &mdash; nothing they logged is deleted. The same happens in reverse if a co-skipper leaves a boat you own.</p>
+
+    <h2>Where do I find galley, provisioning, and the work chart?</h2>
+    <p><strong>Galley &amp; Consumables</strong> tracks food, water, fuel, and supplies separately from spare parts &mdash; reach it from the Galley section in My Boat, or a card on the Dashboard. The <strong>Trip Planner</strong> forecasts what to buy for a passage from your crew, days, and distance. And the <strong>Ship&rsquo;s Log</strong> can plot every job on a chart wherever you recorded a location. On iPad and Mac, galley, provisioning, safety, and registration all gather on a <strong>Readiness</strong> home with a departure-readiness score.</p>
 
     <footer>
       <p><a href="index.html">Maintenance Crew</a> &mdash; <a href="privacy.html">Privacy Policy</a></p>
