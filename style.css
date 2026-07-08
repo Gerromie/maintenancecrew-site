@@ -291,6 +291,19 @@ body.landing {
   letter-spacing: -0.01em;
 }
 
+.landing .trust-note {
+  font-size: 0.98rem;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 34rem;
+  margin: 1.25rem 0 0.4rem;
+}
+
+.landing .trust-note strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .landing .price-note {
   font-size: 0.9rem;
   color: var(--muted);
