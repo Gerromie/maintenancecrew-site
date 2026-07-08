@@ -13,7 +13,7 @@
     </header>
 
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: May 2026</p>
+    <p class="meta">Last updated: July 2026</p>
 
     <p>Maintenance Crew is designed around a simple principle: your boat's data belongs to you. This policy describes precisely what data the app uses and what leaves your device.</p>
 
@@ -23,9 +23,14 @@
     <p><strong>iCloud Backup.</strong> If you have iCloud Backup enabled on your device, Apple may include the app's data directory in your encrypted iCloud Backup as part of standard iOS and macOS backup behavior. This backup is controlled entirely by Apple and your own iCloud settings; Maintenance Crew does not initiate or control it. See <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a> for details on how Apple handles backup data.</p>
 
     <h2>Optional iCloud sync</h2>
-    <p>Maintenance Crew includes an optional iCloud sync feature. When enabled, the app stores a copy of your data in your personal iCloud private database using Apple's CloudKit infrastructure (container <code>iCloud.app.maintenancecrew</code>). Your data in iCloud is stored in your own Apple account and is accessible only to you &mdash; Maintenance Crew does not have access to your iCloud database.</p>
+    <p>Maintenance Crew includes an optional iCloud sync feature. When enabled, the app stores a copy of your data &mdash; including any photos you attach to vessels, parts, and schedules &mdash; in your personal iCloud private database using Apple's CloudKit infrastructure (container <code>iCloud.app.maintenancecrew</code>). Your data in iCloud is stored in your own Apple account and is accessible only to you &mdash; Maintenance Crew does not have access to your iCloud database.</p>
 
     <p>iCloud sync is governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>. You can disable it at any time in Settings &rarr; iCloud.</p>
+
+    <h2>Sharing a boat with a co-skipper</h2>
+    <p>Maintenance Crew lets you share one specific boat with another person you invite &mdash; a "co-skipper." Sharing is private and invite-only; there is no public link. It uses Apple's CloudKit sharing, so the shared boat's data is transmitted, through your and the co-skipper's own iCloud accounts, to the people you invite. This is the one case in which your data reaches another person's device, and it happens only for a boat you deliberately share and only after the invitee accepts.</p>
+
+    <p>Everything attached to the shared boat travels with it &mdash; systems, parts, schedules, logs, manuals, and any photos, including a registration or insurance document photo. Maintenance Crew operates no server in this process; it is handled by Apple's CloudKit sharing and governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>. If you remove a co-skipper (or one leaves), their copy becomes read-only and stops receiving updates; nothing already on their device is deleted.</p>
 
     <h2>Location data</h2>
     <p>Maintenance Crew requests access to your device's location only when you use the Ship's Log feature to record where a log entry was made. Location access requires your explicit permission; the app requests <em>When In Use</em> authorization only.</p>
@@ -34,10 +39,23 @@
 
     <p><strong>Reverse geocoding (place names).</strong> When the app resolves a human-readable place name from your coordinates &mdash; for example, "Anacortes, WA" &mdash; it uses Apple's MapKit reverse-geocoding service (<code>MKReverseGeocodingRequest</code>). This sends your coordinates to Apple's servers to look up the place name. This network call is governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>. If you do not want your coordinates sent to Apple for this purpose, you can decline location access when the app requests it.</p>
 
-    <h2>AI Assistant for PDF manuals</h2>
-    <p>Maintenance Crew includes an optional AI Assistant feature that helps parse maintenance schedules and part numbers from PDF engine manuals. <strong>The app does not send your PDF content to any server.</strong> Instead, the app generates a structured prompt that you copy and paste into any AI chat tool you already use. You paste the response back into the app to import the results. No data is transmitted by Maintenance Crew in this process.</p>
+    <h2>AI parsing for PDF manuals</h2>
+    <p>Maintenance Crew includes an optional feature that parses maintenance schedules and part numbers from PDF engine manuals. There are two ways to use it, and both are optional:</p>
 
-    <p>PDF files are stored at the location you choose on your device, using a security-scoped bookmark. The app also stores a SHA-256 hash of the file in its local database for change detection. Neither the file nor its hash is transmitted by Maintenance Crew.</p>
+    <p><strong>AI Assistant (paste flow).</strong> By default, the app generates a structured prompt that you copy and paste into any AI chat tool you already use, then paste the response back to import the results. Used this way, <strong>the app does not send your PDF content anywhere</strong> &mdash; no data is transmitted by Maintenance Crew, and no AI account or key is required.</p>
+
+    <p><strong>Automatic parsing with your own key.</strong> If you choose to add your own AI provider API key in Settings, the app can parse a manual automatically by sending that PDF directly to the AI provider using your key. This is the one case in which the app itself transmits your manual content to an outside service. Your key is stored only in your device's Keychain; the request is billed to your own account; and the developer neither receives your key nor has any access to the content or the response. What the provider does with the content is governed by that provider's own privacy policy. If you never add a key, this path never runs.</p>
+
+    <p>PDF files are stored at the location you choose on your device, using a security-scoped bookmark. The app also stores a SHA-256 hash of the file in its local database for change detection.</p>
+
+    <h2>Camera</h2>
+    <p>When you add a spare part, you can optionally scan its packaging with the camera to fill in the manufacturer, name, and part number. The text and barcode recognition runs entirely on your device using Apple's on-device frameworks &mdash; the camera image is never uploaded for recognition. The photo you capture is attached to the part and is treated like any other photo (see iCloud sync and sharing above). Camera access requires your explicit permission.</p>
+
+    <h2>Notifications</h2>
+    <p>Maintenance Crew can send local notifications for low stock and upcoming maintenance if you turn those options on in Settings. These are scheduled and delivered on your device by the system; no notification content is transmitted to any server operated by Maintenance Crew. Notifications require your explicit permission.</p>
+
+    <h2>Calendar</h2>
+    <p>If you enable calendar sync, the app adds your boat's service and expiry dates to Apple Calendar using write-only calendar access, which you grant explicitly. The app only adds, updates, and removes the events it creates; it does not read your existing calendar. Exporting a calendar file instead needs no permission and transmits nothing.</p>
 
     <h2>App configuration</h2>
     <p>The app fetches a small configuration file from <code>maintenancecrew.app/api/v1/models.json</code> on launch to keep the AI Assistant prompt current. This request contains no personal data or user identifiers. The configuration is cached on your device for up to 24 hours, and a built-in fallback is used if the request fails.</p>
@@ -55,12 +73,15 @@
     <h2>Summary of data flows</h2>
     <ul>
       <li><strong>Apple iCloud Backup</strong> &mdash; your device data may be included in Apple's encrypted iCloud Backup if you have that feature enabled. Governed by Apple's Privacy Policy.</li>
-      <li><strong>Apple iCloud Sync (optional)</strong> &mdash; your app data is stored in your own iCloud private database when you enable the optional sync feature. Governed by Apple's Privacy Policy.</li>
+      <li><strong>Apple iCloud Sync (optional)</strong> &mdash; your app data, including photos, is stored in your own iCloud private database when you enable the optional sync feature. Governed by Apple's Privacy Policy.</li>
+      <li><strong>Apple CloudKit sharing (optional)</strong> &mdash; when you share a boat with a co-skipper, that one boat's data, including its photos, is transmitted through iCloud to the people you invite. Private and invite-only. Governed by Apple's Privacy Policy.</li>
+      <li><strong>Your chosen AI provider (optional)</strong> &mdash; only if you add your own API key, the app sends a PDF manual you choose to that provider using your key to parse it automatically. Governed by that provider's privacy policy.</li>
       <li><strong>Apple MapKit reverse geocoding</strong> &mdash; GPS coordinates are sent to Apple's servers to resolve place names, only when you record a Ship's Log entry with location enabled. Governed by Apple's Privacy Policy.</li>
+      <li><strong>Apple Calendar (optional)</strong> &mdash; if you enable calendar sync, service and expiry dates are written to Apple Calendar with write-only access you grant. Governed by Apple's Privacy Policy.</li>
       <li><strong>App configuration</strong> &mdash; a configuration file is fetched from <code>maintenancecrew.app/api/v1/models.json</code> on launch. No personal data is transmitted.</li>
       <li><strong>Apple StoreKit / App Store</strong> &mdash; subscription and payment processing handled by Apple. No purchase data is transmitted to Maintenance Crew.</li>
     </ul>
-    <p>No other data leaves your device.</p>
+    <p>Apart from the optional flows listed above &mdash; each of which you turn on yourself &mdash; no other data leaves your device.</p>
 
     <h2>Contact</h2>
     <p>For questions about this privacy policy, contact <a href="mailto:privacy@maintenancecrew.app">privacy@maintenancecrew.app</a>.</p>
