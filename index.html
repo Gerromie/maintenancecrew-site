@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maintenance Crew — Boat maintenance, on your terms.</title>
-  <meta name="description" content="Maintenance Crew is a boat-maintenance tracker for iPhone, iPad, and Mac. Your records stay on your device — no account, no tracking. Schedule services, track spare parts, scan parts, see what's due on a calendar, share a boat with your crew, and pull schedules from PDF owner's manuals.">
+  <meta name="description" content="A boat-maintenance tracker for iPhone, iPad, and Mac. Schedule service, track parts, and pull schedules from manuals. No account, no tracking.">
   <meta property="og:title" content="Maintenance Crew">
-  <meta property="og:description" content="Schedule services, track spare parts, and stow locations on iPhone, iPad, and Mac. Calendar view with export, on-device part scanning, photos, boat sharing for co-skippers, and AI schedule import from PDF owner's manuals.">
+  <meta property="og:description" content="A boat-maintenance tracker for iPhone, iPad, and Mac. Schedule service, track parts, and pull schedules from manuals. No account, no tracking.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://maintenancecrew.app">
   <link rel="stylesheet" href="style.css">
@@ -21,6 +21,7 @@
         <span class="wordmark">Maintenance Crew</span>
       </a>
       <nav>
+        <a href="about.html">About</a>
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
         <a href="disclaimer.html">Terms</a>
@@ -55,6 +56,33 @@
       </div>
     </section>
 
+    <section class="stories">
+      <span class="section-heading">Sound familiar?</span>
+      <h2 class="section-title">However you use a boat, there's a way this fits.</h2>
+      <div class="story-wrap">
+        <div class="story-stack" aria-hidden="true"></div>
+        <div class="story-book" id="storyBook">
+          <div class="story-page" id="storyPage">
+            <div class="story-page-content">
+              <div class="story-page-head">
+                <span class="story-no" id="storyNo">No. 01</span>
+                <span class="story-tag" id="storyTag">THE PROJECT</span>
+              </div>
+              <h3 id="storyTitle"></h3>
+              <p id="storyBody"></p>
+            </div>
+            <div class="story-fold" id="storyFold" data-dir="1" role="button" tabindex="0" aria-label="Turn page"></div>
+          </div>
+        </div>
+        <div class="story-nav">
+          <button class="story-nav-btn" type="button" data-dir="-1" aria-label="Previous story">&lsaquo; Previous</button>
+          <div class="story-dots" id="storyDots"></div>
+          <button class="story-nav-btn" type="button" data-dir="1" aria-label="Next story">Next &rsaquo;</button>
+        </div>
+        <div class="story-count" id="storyCount">Entry 1 of 6</div>
+      </div>
+    </section>
+
     <section class="features">
       <span class="section-heading">What you can do</span>
       <h2 class="section-title">A calm, organized place for everything your boat needs.</h2>
@@ -85,6 +113,14 @@
             <li class="feature-list-item">
               <span class="feature-list-icon"><svg viewBox="0 0 24 24"><path d="M12 21s6-5.5 6-10a6 6 0 0 0-12 0c0 4.5 6 10 6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span>
               <span><strong>Map your maintenance locations.</strong> Every completed job can carry a location and plots on a chart, with the busiest spots standing out.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg></span>
+              <span><strong>Leave yourself a note before it's finished.</strong> Jot down progress on a job that isn't done yet — it'll be waiting exactly as you left it.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span>
+              <span><strong>Find it without knowing its name.</strong> Search turns up the right scheduled task right from the Log Maintenance form, even when you can't remember exactly what it's called.</span>
             </li>
           </ul>
         </div>
@@ -143,12 +179,12 @@
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
             </div>
             <h3>Stays on your boat, not our servers.</h3>
-            <p>Your records live on your device — there's no account to make and nothing of yours on a server we run. We don't track you and we don't run analytics. Turn on iCloud Sync and everything stays current across your own Apple devices, and with the co-skippers you invite to a boat.</p>
+            <p>Your records live on your device — there's no account to make and nothing of yours on a server we run. We don't track you and we don't run analytics. Turn on iCloud Sync and everything stays current across your own Apple devices, and with the co-owners you invite to a boat.</p>
           </div>
           <ul class="feature-list">
             <li class="feature-list-item">
               <span class="feature-list-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="17" cy="6" r="2.5"/><circle cx="17" cy="18" r="2.5"/><path d="M8.2 10.8l6.6-3.6M8.2 13.2l6.6 3.6"/></svg></span>
-              <span><strong>Share a boat with your crew.</strong> Invite a co-skipper to collaborate — private and invite-only, never a public link.</span>
+              <span><strong>Share a boat with your crew.</strong> Invite a co-owner to collaborate — private and invite-only, never a public link.</span>
             </li>
             <li class="feature-list-item">
               <span class="feature-list-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span>
@@ -177,13 +213,13 @@
         </li>
         <li class="journey-step">
           <span class="journey-step-num">2</span>
-          <h3>Cast off, and let Passage Companion take over.</h3>
+          <h3>Head out, and let Passage Companion take over.</h3>
           <p>Tap "We're off" and Passage Companion freezes what's aboard as your departure baseline, then tracks it against how your crew is actually burning through it — no daily logging required. It only speaks up when something's genuinely running short, or it hasn't heard from you in a few days. Fuel is tracked the same way, by engine hours instead of the calendar.</p>
         </li>
         <li class="journey-step">
           <span class="journey-step-num">3</span>
-          <h3>Bring a co-skipper along.</h3>
-          <p>Share a boat and every entry your co-skipper logs syncs straight to your own Ship's Log, attributed to them. A brief notice appears the moment they make a change, wherever you're working in the app — and a durable Partner Activity feed on the Dashboard lets you catch up on their full history any time you open it, not just the instant it happens.</p>
+          <h3>Bring a co-owner along.</h3>
+          <p>Share a boat and every entry your co-owner logs syncs straight to your own Ship's Log, attributed to them. A brief notice appears the moment they make a change, wherever you're working in the app — and a durable Partner Activity feed on the Dashboard lets you catch up on their full history any time you open it, not just the instant it happens.</p>
         </li>
         <li class="journey-step">
           <span class="journey-step-num">4</span>
@@ -193,6 +229,70 @@
       </ol>
     </section>
 
+    <section class="features" id="tanks-trends">
+      <span class="section-heading">New</span>
+      <h2 class="section-title">Know what's in every tank. See where it's going.</h2>
+
+      <div class="feature-grid">
+        <div class="feature-cluster">
+          <span class="section-heading">Every tank, mapped</span>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24"><rect x="7" y="4" width="10" height="16" rx="3"/><path d="M7 13h10M10 4V2M14 4V2"/></svg>
+            </div>
+            <h3>One engine, two tanks, no guessing which is which.</h3>
+            <p>However your fuel and water are actually plumbed — two tanks feeding one engine, a heater that only draws from one of them, a jug you bring along just for a long passage — Maintenance Crew models it the way it really is, not a single tank per category.</p>
+          </div>
+          <ul class="feature-list">
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.2 7.2L15.8 11M8.2 16.8L15.8 13"/></svg></span>
+              <span><strong>Map every tank to every system it feeds.</strong> A tank can supply more than one system, and a system can draw from more than one tank — set up the Plumbing board once and every reading knows where it belongs.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><path d="M8 3h8l1 4H7z"/><rect x="6" y="7" width="12" height="14" rx="2"/></svg></span>
+              <span><strong>Bring a jug along for the trip.</strong> Portable fuel and water containers get their own lifecycle: added aboard for a passage, drawn down or transferred into a fixed tank, then taken off again when you're back.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><path d="M12 21s6-5.5 6-10a6 6 0 0 0-12 0c0 4.5 6 10 6 10z"/><path d="M9 11h6M9 14h4"/></svg></span>
+              <span><strong>Top up any time — voyage or not.</strong> The same simple five-stop level estimate you already use for propane now covers fuel and water too, whether you're mid-passage or topping up at the dock.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M6 11l6-6 6 6"/></svg></span>
+              <span><strong>Pick the right tank without the guesswork.</strong> A tightened-up picker on iPhone makes choosing the right tank quick and clear, even with several aboard.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-cluster">
+          <span class="section-heading">See where it's going</span>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 17l5-6 4 3 6-8"/><path d="M4 20h16"/></svg>
+            </div>
+            <h3>A timeline for everything your boat goes through.</h3>
+            <p>Trends draws one picture from parts, safety gear, fuel, and water — what a schedule already tells you, sitting right alongside what your crew is actually burning through — so you can see whether real life matches the plan.</p>
+          </div>
+          <ul class="feature-list">
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+              <span><strong>Countdowns you don't have to calculate.</strong> Recurring service, registration, insurance, and safety-gear expiries laid out on one timeline, next to what's really been logged.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/></svg></span>
+              <span><strong>Scheduled, ad hoc, or not yet recorded.</strong> Consumption splits into three honest buckets instead of one blurred number, so a trend never gets credit for demand a schedule already explains.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><circle cx="5" cy="17" r="1.6"/><circle cx="10" cy="8" r="1.6"/><circle cx="15" cy="13" r="1.6"/><circle cx="20" cy="6" r="1.6"/><path d="M5 17L10 8l5 5 5-7"/></svg></span>
+              <span><strong>Every reading that built an estimate.</strong> See the observations behind a learned rate, in order — top-ups, check-ins, and the gaps in between — so a number is a story you can retrace, not just a guess.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg></span>
+              <span><strong>Honest when there isn't enough history yet.</strong> A single reading gets called a first look, not a trend — Maintenance Crew only draws a line once there's enough behind it to earn one.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="showcase">
       <div class="showcase-copy">
         <span class="section-heading">Built for every screen</span>
@@ -200,7 +300,7 @@
         <p>On iPhone, Maintenance Crew is a quick check between jobs. On iPad and Mac it opens up into a full three-column workspace — sidebar, list, and detail side by side — so you can plan a season, review a system, and read the manual without losing your place. Every section opens to something worth looking at, not an empty pane, and picks up right where you left off next time. The same records, synced across every device you own — and, when you share a boat, with your crew.</p>
       </div>
       <div class="showcase-frame">
-        <img src="assets/screen-macos-dashboard.png" alt="Maintenance Crew on Mac showing the three-column workspace: sidebar, dashboard cards, and detail pane">
+        <img src="assets/screen-macos-myboat.png" alt="Maintenance Crew on Mac showing My Boat's three-column workspace: vessel systems in the sidebar and list, and the Main Engine detail pane with its parsed manual and maintenance list">
       </div>
     </section>
 
@@ -230,6 +330,7 @@
     <footer class="site-footer">
       <div>&copy; 2026 Maintenance Crew</div>
       <div class="links">
+        <a href="about.html">About</a>
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
         <a href="disclaimer.html">Terms</a>
@@ -238,6 +339,90 @@
     </footer>
 
   </div>
+
+  <script>
+  (function () {
+    var STORIES = [
+      { tag: "THE PROJECT", title: "One job, a dozen small steps.",
+        body: "Boat Projects holds a repair or upgrade across every session you give it. The note you leave mid-job is right where you left it next time, and the parts a task needs are attached before you can forget which one it was." },
+      { tag: "THE PARTNER", title: "Two owners, one logbook.",
+        body: "Invite a co-owner to your boat and every entry they log — the part they ordered, the fix they found — lands in your own Ship's Log, attributed to them, with a quiet nudge the moment something changes." },
+      { tag: "THE MANUAL", title: "What the manufacturer says, one tap away.",
+        body: "Drop in an owner's manual and the schedule, intervals, and parts list come out the other side — with the page reference sitting right on the task, so you can jump straight to the paragraph that explains it." },
+      { tag: "SEASON START", title: "Everything checked before you shove off.",
+        body: "Safety gear, registration, insurance, and anything overdue roll up into one departure-readiness read, and the calendar lays out what's due this month — before you've even pulled the cover off." },
+      { tag: "LAY-UP", title: "Put her away right, remember it next spring.",
+        body: "Log the winterizing jobs as you go and note where you stopped. Next season's dashboard picks up exactly where lay-up left off — nothing relies on memory from six months ago." },
+      { tag: "THE PASSAGE", title: "A weekend, a season, or the whole coast.",
+        body: "Tell the Trip Planner your crew and your days out, and it turns that into a shopping list before you leave the dock. Head out, and Passage Companion tracks it against what's actually aboard — quiet until something's genuinely running short." }
+    ];
+
+    var N = STORIES.length;
+    var index = 0;
+    var book = document.getElementById('storyBook');
+    var dotsWrap = document.getElementById('storyDots');
+    var countEl = document.getElementById('storyCount');
+    if (!book) return;
+
+    STORIES.forEach(function (_, i) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-current', i === 0 ? 'true' : 'false');
+      dot.setAttribute('aria-label', 'Go to story ' + (i + 1));
+      dot.addEventListener('click', function () { go(i - index); });
+      dotsWrap.appendChild(dot);
+    });
+
+    function paint() {
+      var d = STORIES[index];
+      document.getElementById('storyNo').textContent = 'No. ' + String(index + 1).padStart(2, '0');
+      document.getElementById('storyTag').textContent = d.tag;
+      document.getElementById('storyTitle').textContent = d.title;
+      document.getElementById('storyBody').textContent = d.body;
+      countEl.textContent = 'Entry ' + (index + 1) + ' of ' + N;
+      Array.prototype.forEach.call(dotsWrap.children, function (dot, i) {
+        dot.setAttribute('aria-current', i === index ? 'true' : 'false');
+      });
+    }
+
+    function go(dir) {
+      if (!dir) return;
+      var page = document.getElementById('storyPage');
+      var clone = page.cloneNode(true);
+      clone.removeAttribute('id');
+      clone.classList.add('flip', dir > 0 ? 'turn-next' : 'turn-prev');
+      book.appendChild(clone);
+
+      index = (index + dir + N) % N;
+      paint();
+
+      clone.addEventListener('animationend', function () { clone.remove(); }, { once: true });
+    }
+
+    document.querySelectorAll('.story-nav-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () { go(parseInt(btn.dataset.dir, 10)); });
+    });
+
+    var fold = document.getElementById('storyFold');
+    fold.addEventListener('click', function () { go(1); });
+    fold.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(1); }
+    });
+    setTimeout(function () { fold.classList.add('hint'); }, 900);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      var tag = (document.activeElement && document.activeElement.tagName) || '';
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      var rect = book.getBoundingClientRect();
+      var inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) return;
+      go(e.key === 'ArrowRight' ? 1 : -1);
+    });
+
+    paint();
+  })();
+  </script>
 
 </body>
 </html>
