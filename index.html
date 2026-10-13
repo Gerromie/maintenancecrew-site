@@ -58,28 +58,92 @@
 
     <section class="stories">
       <span class="section-heading">Sound familiar?</span>
-      <h2 class="section-title">However you use a boat, there's a way this fits.</h2>
+      <h2 class="section-title">However you use a boat, there&rsquo;s a way this fits.</h2>
       <div class="story-wrap">
         <div class="story-stack" aria-hidden="true"></div>
-        <div class="story-book" id="storyBook">
-          <div class="story-page" id="storyPage">
+        <!-- All six entries are real markup in a scroll-snapping row: the site ships no
+             JavaScript (enforced by StaticSiteValidation_test.testNoExternalResources), so
+             the text must be readable, selectable, and indexable without it. Swipe, scroll,
+             and the numbered links below all move between entries natively. -->
+        <div class="story-book">
+          <article class="story-page" id="story-1" aria-label="Entry 1 of 6">
             <div class="story-page-content">
               <div class="story-page-head">
-                <span class="story-no" id="storyNo">No. 01</span>
-                <span class="story-tag" id="storyTag">THE PROJECT</span>
+                <span class="story-no">No. 01</span>
+                <span class="story-tag">THE PROJECT</span>
               </div>
-              <h3 id="storyTitle"></h3>
-              <p id="storyBody"></p>
+              <h3>One job, a dozen small steps.</h3>
+              <p>Boat Projects holds a repair or upgrade across every session you give it. The note you leave mid-job is right where you left it next time, and the parts a task needs are attached before you can forget which one it was.</p>
             </div>
-            <div class="story-fold" id="storyFold" data-dir="1" role="button" tabindex="0" aria-label="Turn page"></div>
+            <a class="story-fold" href="#story-2" aria-label="Next entry"></a>
+          </article>
+          <article class="story-page" id="story-2" aria-label="Entry 2 of 6">
+            <div class="story-page-content">
+              <div class="story-page-head">
+                <span class="story-no">No. 02</span>
+                <span class="story-tag">THE PARTNER</span>
+              </div>
+              <h3>Two owners, one logbook.</h3>
+              <p>Invite a crewmate to your boat and every entry they log &mdash; the part they ordered, the fix they found &mdash; lands in your own Ship&rsquo;s Log, attributed to them, with a quiet nudge the moment something changes.</p>
+            </div>
+            <a class="story-fold" href="#story-3" aria-label="Next entry"></a>
+          </article>
+          <article class="story-page" id="story-3" aria-label="Entry 3 of 6">
+            <div class="story-page-content">
+              <div class="story-page-head">
+                <span class="story-no">No. 03</span>
+                <span class="story-tag">THE MANUAL</span>
+              </div>
+              <h3>What the manufacturer says, one tap away.</h3>
+              <p>Drop in an owner&rsquo;s manual and the schedule, intervals, and parts list come out the other side &mdash; with the page reference sitting right on the task, so you can jump straight to the paragraph that explains it.</p>
+            </div>
+            <a class="story-fold" href="#story-4" aria-label="Next entry"></a>
+          </article>
+          <article class="story-page" id="story-4" aria-label="Entry 4 of 6">
+            <div class="story-page-content">
+              <div class="story-page-head">
+                <span class="story-no">No. 04</span>
+                <span class="story-tag">SEASON START</span>
+              </div>
+              <h3>Everything checked before you shove off.</h3>
+              <p>Safety gear, registration, insurance, and anything overdue roll up into one departure-readiness read, and the calendar lays out what&rsquo;s due this month &mdash; before you&rsquo;ve even pulled the cover off.</p>
+            </div>
+            <a class="story-fold" href="#story-5" aria-label="Next entry"></a>
+          </article>
+          <article class="story-page" id="story-5" aria-label="Entry 5 of 6">
+            <div class="story-page-content">
+              <div class="story-page-head">
+                <span class="story-no">No. 05</span>
+                <span class="story-tag">LAY-UP</span>
+              </div>
+              <h3>Put her away right, remember it next spring.</h3>
+              <p>Log the winterizing jobs as you go and note where you stopped. Next season&rsquo;s dashboard picks up exactly where lay-up left off &mdash; nothing relies on memory from six months ago.</p>
+            </div>
+            <a class="story-fold" href="#story-6" aria-label="Next entry"></a>
+          </article>
+          <article class="story-page" id="story-6" aria-label="Entry 6 of 6">
+            <div class="story-page-content">
+              <div class="story-page-head">
+                <span class="story-no">No. 06</span>
+                <span class="story-tag">THE PASSAGE</span>
+              </div>
+              <h3>A weekend, a season, or the whole coast.</h3>
+              <p>Tell the Trip Planner your crew and your days out, and it turns that into a shopping list before you leave the dock. Head out, and Passage Companion tracks it against what&rsquo;s actually aboard &mdash; quiet until something&rsquo;s genuinely running short.</p>
+            </div>
+            <a class="story-fold" href="#story-1" aria-label="Next entry"></a>
+          </article>
+        </div>
+        <nav class="story-nav" aria-label="Entries">
+          <div class="story-dots">
+            <a href="#story-1" aria-label="Go to entry 1 of 6"><span>1</span></a>
+            <a href="#story-2" aria-label="Go to entry 2 of 6"><span>2</span></a>
+            <a href="#story-3" aria-label="Go to entry 3 of 6"><span>3</span></a>
+            <a href="#story-4" aria-label="Go to entry 4 of 6"><span>4</span></a>
+            <a href="#story-5" aria-label="Go to entry 5 of 6"><span>5</span></a>
+            <a href="#story-6" aria-label="Go to entry 6 of 6"><span>6</span></a>
           </div>
-        </div>
-        <div class="story-nav">
-          <button class="story-nav-btn" type="button" data-dir="-1" aria-label="Previous story">&lsaquo; Previous</button>
-          <div class="story-dots" id="storyDots"></div>
-          <button class="story-nav-btn" type="button" data-dir="1" aria-label="Next story">Next &rsaquo;</button>
-        </div>
-        <div class="story-count" id="storyCount">Entry 1 of 6</div>
+        </nav>
+        <p class="story-count">6 entries &mdash; swipe, scroll, or pick one above.</p>
       </div>
     </section>
 
@@ -179,12 +243,12 @@
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
             </div>
             <h3>Stays on your boat, not our servers.</h3>
-            <p>Your records live on your device — there's no account to make and nothing of yours on a server we run. We don't track you and we don't run analytics. Turn on iCloud Sync and everything stays current across your own Apple devices, and with the co-owners you invite to a boat.</p>
+            <p>Your records live on your device — there's no account to make and nothing of yours on a server we run. We don't track you and we don't run analytics. Turn on iCloud Sync and everything stays current across your own Apple devices, and with the crewmates you invite to a boat.</p>
           </div>
           <ul class="feature-list">
             <li class="feature-list-item">
               <span class="feature-list-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="17" cy="6" r="2.5"/><circle cx="17" cy="18" r="2.5"/><path d="M8.2 10.8l6.6-3.6M8.2 13.2l6.6 3.6"/></svg></span>
-              <span><strong>Share a boat with your crew.</strong> Invite a co-owner to collaborate — private and invite-only, never a public link.</span>
+              <span><strong>Share a boat with your crew.</strong> Invite a crewmate to collaborate — private and invite-only, never a public link.</span>
             </li>
             <li class="feature-list-item">
               <span class="feature-list-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span>
@@ -192,7 +256,7 @@
             </li>
             <li class="feature-list-item">
               <span class="feature-list-icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="10" rx="2"/><path d="M16 10h4l2 2v4h-6"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
-              <span><strong>Works offline.</strong> Your records and parsed manuals are always available, with no signal required.</span>
+              <span><strong>Works offline.</strong> Your records and parsed manuals are always available, with no signal required — only parsing a new manual needs a connection.</span>
             </li>
           </ul>
         </div>
@@ -218,8 +282,8 @@
         </li>
         <li class="journey-step">
           <span class="journey-step-num">3</span>
-          <h3>Bring a co-owner along.</h3>
-          <p>Share a boat and every entry your co-owner logs syncs straight to your own Ship's Log, attributed to them. A brief notice appears the moment they make a change, wherever you're working in the app — and a durable Partner Activity feed on the Dashboard lets you catch up on their full history any time you open it, not just the instant it happens.</p>
+          <h3>Bring a crewmate along.</h3>
+          <p>Share a boat and every entry your crewmate logs syncs straight to your own Ship's Log, attributed to them. A brief notice appears the moment they make a change, wherever you're working in the app — and a durable Partner Activity feed on the Dashboard lets you catch up on their full history any time you open it, not just the instant it happens.</p>
         </li>
         <li class="journey-step">
           <span class="journey-step-num">4</span>
@@ -229,8 +293,72 @@
       </ol>
     </section>
 
-    <section class="features" id="tanks-trends">
+    <section class="features" id="milestones-wishlist">
       <span class="section-heading">New</span>
+      <h2 class="section-title">Work towards something. Buy it when the price is right.</h2>
+
+      <div class="feature-grid">
+        <div class="feature-cluster">
+          <span class="section-heading">Milestones</span>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg>
+            </div>
+            <h3>A trip, a launch, the boat show.</h3>
+            <p>Name what you&rsquo;re working towards and tag the jobs and purchases that have to happen first. Maintenance Crew keeps count &mdash; jobs done, things bought, days to go.</p>
+          </div>
+          <ul class="feature-list">
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><path d="M4 12l4 4 8-8"/><path d="M14 16h6M17 13v6"/></svg></span>
+              <span><strong>Counts you can trust.</strong> Jobs done and things bought are tallied separately, so a finished job never hides an unbought life raft.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
+              <span><strong>A nudge, three weeks out.</strong> If anything&rsquo;s still open as the day gets close, the Dashboard says so &mdash; once.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+              <span><strong>On the Calendar.</strong> Dated milestones sit on a Horizon rail and flag their day on the month grid.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></span>
+              <span><strong>Next year, in one tap.</strong> A finished milestone offers to start next year&rsquo;s with the same name.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-cluster">
+          <span class="section-heading">Wishlist</span>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+            </div>
+            <h3>The things you want, not the things you&rsquo;re due.</h3>
+            <p>A place on the shopping list for the big-ticket and nice-to-have buys &mdash; a life raft, collapsible fenders, a new chartplotter &mdash; ranked by how much you want them, not by a due date.</p>
+          </div>
+          <ul class="feature-list">
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/></svg></span>
+              <span><strong>Grab it, Want, or Someday.</strong> Three tiers, set by you. No prices or budgets, by design.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 8l8 8"/></svg></span>
+              <span><strong>Tied to the work.</strong> Tag a wish to a Boat Project or a milestone, and the project shows what&rsquo;s linked and what&rsquo;s still short.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg></span>
+              <span><strong>Bought, with Undo.</strong> Bought items move into a collapsible group you can put back from.</span>
+            </li>
+            <li class="feature-list-item">
+              <span class="feature-list-icon"><svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6L5 3H2"/></svg></span>
+              <span><strong>Right on the shopping list.</strong> Wishes have their own section next to the parts you&rsquo;re short, so one trip to the chandlery covers both.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="tanks-trends">
+      <span class="section-heading">Tanks &amp; trends</span>
       <h2 class="section-title">Know what's in every tank. See where it's going.</h2>
 
       <div class="feature-grid">
@@ -339,90 +467,6 @@
     </footer>
 
   </div>
-
-  <script>
-  (function () {
-    var STORIES = [
-      { tag: "THE PROJECT", title: "One job, a dozen small steps.",
-        body: "Boat Projects holds a repair or upgrade across every session you give it. The note you leave mid-job is right where you left it next time, and the parts a task needs are attached before you can forget which one it was." },
-      { tag: "THE PARTNER", title: "Two owners, one logbook.",
-        body: "Invite a co-owner to your boat and every entry they log — the part they ordered, the fix they found — lands in your own Ship's Log, attributed to them, with a quiet nudge the moment something changes." },
-      { tag: "THE MANUAL", title: "What the manufacturer says, one tap away.",
-        body: "Drop in an owner's manual and the schedule, intervals, and parts list come out the other side — with the page reference sitting right on the task, so you can jump straight to the paragraph that explains it." },
-      { tag: "SEASON START", title: "Everything checked before you shove off.",
-        body: "Safety gear, registration, insurance, and anything overdue roll up into one departure-readiness read, and the calendar lays out what's due this month — before you've even pulled the cover off." },
-      { tag: "LAY-UP", title: "Put her away right, remember it next spring.",
-        body: "Log the winterizing jobs as you go and note where you stopped. Next season's dashboard picks up exactly where lay-up left off — nothing relies on memory from six months ago." },
-      { tag: "THE PASSAGE", title: "A weekend, a season, or the whole coast.",
-        body: "Tell the Trip Planner your crew and your days out, and it turns that into a shopping list before you leave the dock. Head out, and Passage Companion tracks it against what's actually aboard — quiet until something's genuinely running short." }
-    ];
-
-    var N = STORIES.length;
-    var index = 0;
-    var book = document.getElementById('storyBook');
-    var dotsWrap = document.getElementById('storyDots');
-    var countEl = document.getElementById('storyCount');
-    if (!book) return;
-
-    STORIES.forEach(function (_, i) {
-      var dot = document.createElement('button');
-      dot.type = 'button';
-      dot.setAttribute('aria-current', i === 0 ? 'true' : 'false');
-      dot.setAttribute('aria-label', 'Go to story ' + (i + 1));
-      dot.addEventListener('click', function () { go(i - index); });
-      dotsWrap.appendChild(dot);
-    });
-
-    function paint() {
-      var d = STORIES[index];
-      document.getElementById('storyNo').textContent = 'No. ' + String(index + 1).padStart(2, '0');
-      document.getElementById('storyTag').textContent = d.tag;
-      document.getElementById('storyTitle').textContent = d.title;
-      document.getElementById('storyBody').textContent = d.body;
-      countEl.textContent = 'Entry ' + (index + 1) + ' of ' + N;
-      Array.prototype.forEach.call(dotsWrap.children, function (dot, i) {
-        dot.setAttribute('aria-current', i === index ? 'true' : 'false');
-      });
-    }
-
-    function go(dir) {
-      if (!dir) return;
-      var page = document.getElementById('storyPage');
-      var clone = page.cloneNode(true);
-      clone.removeAttribute('id');
-      clone.classList.add('flip', dir > 0 ? 'turn-next' : 'turn-prev');
-      book.appendChild(clone);
-
-      index = (index + dir + N) % N;
-      paint();
-
-      clone.addEventListener('animationend', function () { clone.remove(); }, { once: true });
-    }
-
-    document.querySelectorAll('.story-nav-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () { go(parseInt(btn.dataset.dir, 10)); });
-    });
-
-    var fold = document.getElementById('storyFold');
-    fold.addEventListener('click', function () { go(1); });
-    fold.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(1); }
-    });
-    setTimeout(function () { fold.classList.add('hint'); }, 900);
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-      var tag = (document.activeElement && document.activeElement.tagName) || '';
-      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
-      var rect = book.getBoundingClientRect();
-      var inView = rect.top < window.innerHeight && rect.bottom > 0;
-      if (!inView) return;
-      go(e.key === 'ArrowRight' ? 1 : -1);
-    });
-
-    paint();
-  })();
-  </script>
 
 </body>
 </html>
