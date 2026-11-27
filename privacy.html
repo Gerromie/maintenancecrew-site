@@ -13,7 +13,7 @@
     </header>
 
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: July 2026</p>
+    <p class="meta">Last updated: November 2026</p>
 
     <p>Maintenance Crew is designed around a simple principle: your boat's data belongs to you. This policy describes precisely what data the app uses and what leaves your device.</p>
 
@@ -25,12 +25,16 @@
     <h2>Optional iCloud sync</h2>
     <p>Maintenance Crew includes an optional iCloud sync feature. When enabled, the app stores a copy of your data &mdash; including any photos you attach to vessels, parts, and schedules &mdash; in your personal iCloud private database using Apple's CloudKit infrastructure (container <code>iCloud.app.maintenancecrew</code>). Your data in iCloud is stored in your own Apple account and is accessible only to you &mdash; Maintenance Crew does not have access to your iCloud database.</p>
 
+    <p><strong>End-to-end encrypted fact values.</strong> The values of the facts you keep about your boat on the Knowledge page (the value itself, and any quantity and unit) are stored in iCloud end-to-end encrypted, using CloudKit's encrypted fields. Only your devices, and the devices of crewmates you share that boat with, can decrypt them. A fact's name, category and the quote from the record it came from are stored in iCloud the same way as the rest of your data, not end-to-end encrypted.</p>
+
+    <p><strong>Ship's Log photos.</strong> Photos attached to Ship's Log entries sync to your other devices through iCloud. Extra gallery photos on vessels, parts and tasks stay on the device where you added them.</p>
+
     <p>iCloud sync is governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>. You can disable it at any time in Settings &rarr; iCloud.</p>
 
     <h2>Sharing a boat with a crewmate</h2>
     <p>Maintenance Crew lets you share one specific boat with another person you invite &mdash; a "crewmate." Sharing is private and invite-only; there is no public link. It uses Apple's CloudKit sharing, so the shared boat's data is transmitted, through your and the crewmate's own iCloud accounts, to the people you invite. This is the one case in which your data reaches another person's device, and it happens only for a boat you deliberately share and only after the invitee accepts.</p>
 
-    <p>Everything attached to the shared boat travels with it &mdash; systems, parts, schedules, logs, manuals, and any photos, including a registration or insurance document photo. Maintenance Crew operates no server in this process; it is handled by Apple's CloudKit sharing and governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>. If you remove a crewmate (or one leaves), their copy becomes read-only and stops receiving updates; nothing already on their device is deleted.</p>
+    <p>Everything attached to the shared boat travels with it &mdash; systems, parts, schedules, logs, manuals, the facts on its Knowledge page (including Private ones), Ship's Log photos, and any other synced photos, including a registration or insurance document photo. Maintenance Crew operates no server in this process; it is handled by Apple's CloudKit sharing and governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>. If you remove a crewmate (or one leaves), their copy becomes read-only and stops receiving updates; nothing already on their device is deleted.</p>
 
     <h2>Location data</h2>
     <p>Maintenance Crew requests access to your device's location only when you use the Ship's Log feature to record where a log entry was made. Location access requires your explicit permission; the app requests <em>When In Use</em> authorization only.</p>
@@ -50,6 +54,25 @@
 
     <h2>Camera</h2>
     <p>When you add a spare part, you can optionally scan its packaging with the camera to fill in the manufacturer, name, and part number. The text and barcode recognition runs entirely on your device using Apple's on-device frameworks &mdash; the camera image is never uploaded for recognition. The photo you capture is attached to the part and is treated like any other photo (see iCloud sync and sharing above). Camera access requires your explicit permission.</p>
+
+    <p>You can also photograph a data plate or a manual page to suggest facts about your boat. That text is read the same way, on your device. See Reading text from your records and photos below.</p>
+
+    <p>Photos are re-encoded on your device when you save them, which removes their original metadata, including any GPS location. A photo that syncs to iCloud or to a crewmate carries no location.</p>
+
+    <h2>Reading text from your records and photos</h2>
+    <p>Found in Your Records suggests facts about your boat by reading your own logs, task notes, parts, schedules and manuals, and the text in a photo of a data plate or manual page if you add one. This reading happens entirely on your device. Photo text is recognized with Apple's on-device frameworks, and no AI model is used. Nothing is sent to Maintenance Crew or any other service, and a suggestion only becomes a fact if you keep it.</p>
+
+    <h2>Private facts</h2>
+    <p>You can mark any fact Private, and identifiers such as a hull ID, MMSI, registration or beacon ID found in your records are suggested as Private automatically. Private keeps a value out of Spotlight, out of what you send with Share, out of crewmate activity notices, and out of Siri answers until you tap Show. Private does not hide a value from crewmates: it still syncs to everyone you share that boat with, and they can see it in the app.</p>
+
+    <h2>Ask and Apple Intelligence</h2>
+    <p>On devices with Apple Intelligence, Ask Maintenance Crew answers questions about your boat inside the app. Answers are built from your own records on the device, and Apple's on-device model writes only the one-line headline. Nothing you ask, and nothing in your records, is sent to Maintenance Crew or to any third party. "Asked lately" keeps your recent questions for each boat on this device only; it is never synced. On devices without Apple Intelligence, Ask does not appear.</p>
+
+    <h2>Siri and Shortcuts</h2>
+    <p>You can ask Siri about your boat's facts and maintenance history, or tell Siri a new fact. The app answers from the records on your device; your request itself is handled by Apple under <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>, and nothing is sent to Maintenance Crew. A Private value is never spoken or shown in a Siri answer: the answer asks you to tap Show, which iOS requires you to authenticate before the value appears. Telling Siri a new fact requires your device to be unlocked.</p>
+
+    <h2>Spotlight</h2>
+    <p>The facts you keep about your boats are added to your device's Spotlight index so you can search them from the Home Screen. The index lives on your device. Private facts are never indexed, and neither is any fact that looks like a hull ID, MMSI, registration or beacon ID. Suggested, dismissed and replaced values are not indexed either.</p>
 
     <h2>Notifications</h2>
     <p>Maintenance Crew can send local notifications for low stock and upcoming maintenance if you turn those options on in Settings. These are scheduled and delivered on your device by the system; no notification content is transmitted to any server operated by Maintenance Crew. Notifications require your explicit permission.</p>
@@ -73,15 +96,16 @@
     <h2>Summary of data flows</h2>
     <ul>
       <li><strong>Apple iCloud Backup</strong> &mdash; your device data may be included in Apple's encrypted iCloud Backup if you have that feature enabled. Governed by Apple's Privacy Policy.</li>
-      <li><strong>Apple iCloud Sync (optional)</strong> &mdash; your app data, including photos, is stored in your own iCloud private database when you enable the optional sync feature. Governed by Apple's Privacy Policy.</li>
+      <li><strong>Apple iCloud Sync (optional)</strong> &mdash; your app data, including photos, is stored in your own iCloud private database when you enable the optional sync feature. The values of your boat's facts are end-to-end encrypted. Governed by Apple's Privacy Policy.</li>
       <li><strong>Apple CloudKit sharing (optional)</strong> &mdash; when you share a boat with a crewmate, that one boat's data, including its photos, is transmitted through iCloud to the people you invite. Private and invite-only. Governed by Apple's Privacy Policy.</li>
       <li><strong>Your chosen AI provider (optional)</strong> &mdash; only if you add your own API key, the app sends a PDF manual you choose to that provider using your key to parse it automatically. Governed by that provider's privacy policy.</li>
+      <li><strong>Apple Siri (optional)</strong> &mdash; when you ask Siri about your boat or tell it a fact, Apple handles the request; the answer comes from the records on your device, and Private values are withheld until you tap Show. Governed by Apple's Privacy Policy.</li>
       <li><strong>Apple MapKit reverse geocoding</strong> &mdash; GPS coordinates are sent to Apple's servers to resolve place names, only when you record a Ship's Log entry with location enabled. Governed by Apple's Privacy Policy.</li>
       <li><strong>Apple Calendar (optional)</strong> &mdash; if you enable calendar sync, service and expiry dates are written to Apple Calendar with write-only access you grant. Governed by Apple's Privacy Policy.</li>
       <li><strong>App configuration</strong> &mdash; a configuration file is fetched from <code>maintenancecrew.app/api/v1/models.json</code> on launch. No personal data is transmitted.</li>
       <li><strong>Apple StoreKit / App Store</strong> &mdash; subscription and payment processing handled by Apple. No purchase data is transmitted to Maintenance Crew.</li>
     </ul>
-    <p>Apart from the optional flows listed above &mdash; each of which you turn on yourself &mdash; no other data leaves your device.</p>
+    <p>Apart from the optional flows listed above &mdash; each of which you turn on yourself &mdash; no other data leaves your device. Ask, Spotlight indexing, and reading text from your records and photos all run on your device and send nothing anywhere.</p>
 
     <h2>Contact</h2>
     <p>For questions about this privacy policy, contact <a href="mailto:privacy@maintenancecrew.app">privacy@maintenancecrew.app</a>.</p>
